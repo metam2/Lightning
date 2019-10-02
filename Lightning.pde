@@ -1,5 +1,17 @@
-PImage photo1;
-PImage photo2;
+PImage wizardUp;
+PImage wizardDown;
+int WIZARD_X = 0;
+int WIZARD_Y = 200;
+
+int slope = 0;
+int length = 0;
+int thick = 0;
+int yCenter = 150;
+int x1 = WIZARD_X ;
+int y1 = WIZARD_Y + 10;
+int x2 = WIZARD_X + 4;
+int y2 = WIZARD_Y + 10;
+
 void setup()
 {
   	size(500,500);
@@ -10,28 +22,25 @@ void setup()
 	int g = randomNumber(100, 255);
 	int b = randomNumber(100, 255);
 	stroke(r, g, b);
-  photo1 = loadImage("wizard1.PNG");
-  photo2 = loadImage("wizard2.png");
+  wizardUp = loadImage("wizardUp.PNG");
+  wizardDown = loadImage("wizardDown.png");
+  
+  yCenter = WIZARD_Y + 10;
+  x1 = WIZARD_X + wizardUp.width;
+  y1 = WIZARD_Y + 10;
+  x2 = WIZARD_X + wizardUp.width + 4;
+  y2 = WIZARD_Y + 10;
 }
-
-int slope = 0;
-int length = 0;
-int thick = 0;
-int yCenter = 150;
-int x1 = 180;
-int y1 = 210;
-int x2 = 176;
-int y2 = 210;
 
 void draw()
 {	
   if (slope < 0)
-    image(photo1, 0, 200);
+    image(wizardUp, 0, 200);
   else
-    image(photo2, 0, 200);
+    image(wizardDown, 0, 200);
     
   fill(20, 20, 50, 4);
-  rect(0, 0, width, height);
+  rect(-1, -1, width + 1, height + 1);
   if(x1 < width){
   
   	if (length == 0){
