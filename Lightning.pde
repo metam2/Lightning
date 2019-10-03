@@ -1,15 +1,16 @@
 PImage wizardUp;
 PImage wizardDown;
+PImage cloud;
 int WIZARD_X = 0;
 int WIZARD_Y = 200;
 
+int r, g, b;
 int slope = 0;
 int length = 0;
 int thick = 0;
 int yCenter = 150;
-int x1 = WIZARD_X ;
+int x = WIZARD_X ;
 int y1 = WIZARD_Y + 10;
-int x2 = WIZARD_X + 4;
 int y2 = WIZARD_Y + 10;
 
 void setup()
@@ -18,30 +19,37 @@ void setup()
 	background(31, 31, 95);
 	frameRate(150);
 
-	int r = randomNumber(100, 255);
-	int g = randomNumber(100, 255);
-	int b = randomNumber(100, 255);
+	r = randomNumber(100, 255);
+	g = randomNumber(100, 255);
+	b = randomNumber(100, 255);
 	stroke(r, g, b);
   wizardUp = loadImage("wizardUp.PNG");
   wizardDown = loadImage("wizardDown.png");
+  cloud = loadImage("cloud.png");
   
   yCenter = WIZARD_Y + 10;
-  x1 = WIZARD_X + wizardUp.width;
-  y1 = WIZARD_Y + 10;
-  x2 = WIZARD_X + wizardUp.width + 4;
-  y2 = WIZARD_Y + 10;
+  x = WIZARD_X + wizardUp.width;
 }
 
 void draw()
 {	
+  /*if(x > 300){
+    noStroke();
+    fill(50, 50, 100);
+    rect(0, 0, x - 340, height);
+  } */
+  
+    
+  fill(20, 20, 50, 4);
+  rect(-1, -1, width + 1, height + 1);
+  
+  image(cloud, 0, 250);
   if (slope < 0)
     image(wizardUp, 0, 200);
   else
     image(wizardDown, 0, 200);
-    
-  fill(20, 20, 50, 4);
-  rect(-1, -1, width + 1, height + 1);
-  if(x1 < width){
+  
+  if(x < width){
   
   	if (length == 0){
   		length = randomNumber(10, 1);
@@ -64,25 +72,22 @@ void draw()
   	}
   	length --;
   
-  	x1 += 2;
-  	x2 += 2;
+  	x += 2;
   	yCenter += slope;
-  	y1 = yCenter - thick;
-  	y2 = yCenter + thick;
   
-  	line(x1, y1, x2, y2);
+  stroke(r, g, b);
+  	line(x, yCenter-thick, x - 4, yCenter + thick);
   
   }
 
 }
 void mousePressed()
 {
-	x1 = 180;
-	x2 = 176;
+	x = 180;
 	yCenter = 210;
-	int r = randomNumber(100, 255);
-	int g = randomNumber(100, 255);
-	int b = randomNumber(100, 255);
+	r = randomNumber(100, 255);
+	g = randomNumber(100, 255);
+	b = randomNumber(100, 255);
 	stroke(r, g, b);
 }
 
