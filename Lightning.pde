@@ -23,9 +23,10 @@ void setup()
 	g = randomNumber(100, 255);
 	b = randomNumber(100, 255);
 	stroke(r, g, b);
-  wizardUp = loadImage("wizardUp.PNG");
+  wizardUp = loadImage("wizardUp.png");
   wizardDown = loadImage("wizardDown.png");
   cloud = loadImage("cloud.png");
+  cloud.resize(wizardUp.width, 145);
   
   yCenter = WIZARD_Y + 10;
   x = WIZARD_X + wizardUp.width;
@@ -33,17 +34,15 @@ void setup()
 
 void draw()
 {	
-  /*if(x > 300){
-    noStroke();
-    fill(50, 50, 100);
-    rect(0, 0, x - 340, height);
-  } */
-  
     
   fill(20, 20, 50, 4);
   rect(-1, -1, width + 1, height + 1);
   
-  image(cloud, 0, 250);
+  fill(31, 31, 95);
+  noStroke();
+  rect(WIZARD_X, WIZARD_Y - 15, WIZARD_X + 190, WIZARD_Y + wizardUp.height);
+  
+  image(cloud, 0, WIZARD_Y + wizardUp.height - 80);
   if (slope < 0)
     image(wizardUp, 0, 200);
   else
