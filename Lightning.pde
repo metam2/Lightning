@@ -26,7 +26,6 @@ void setup()
   wizardUp = loadImage("wizardUp.png");
   wizardDown = loadImage("wizardDown.png");
   cloud = loadImage("cloud.png");
-  cloud.resize(wizardUp.width, 145);
   
   yCenter = WIZARD_Y + 10;
   x = WIZARD_X + wizardUp.width;
