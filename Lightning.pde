@@ -40,7 +40,8 @@ void draw()
   fill(31, 31, 95);
   noStroke();
   rect(WIZARD_X, WIZARD_Y - 15, WIZARD_X + 190, WIZARD_Y + wizardUp.height);
-  image(cloud, 0, WIZARD_Y + wizardUp.height - 80);
+  image(cloud, 0, 400);
+  //WIZARD_Y + wizardUp.height - 80
   
   if (slope < 0)
     image(wizardUp, 0, 200);
