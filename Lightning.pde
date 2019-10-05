@@ -28,7 +28,7 @@ void setup()
   cloud = loadImage("cloud.png");
   
   yCenter = WIZARD_Y + 10;
-  x = WIZARD_X + wizardDown.width;
+  x = 180;
 }
 
 void draw()
