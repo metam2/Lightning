@@ -28,7 +28,7 @@ void setup()
   cloud = loadImage("cloud.png");
   
   yCenter = WIZARD_Y + 10;
-  x = WIZARD_X + wizardUp.width;
+  x = WIZARD_X + wizardDown.width;
 }
 
 void draw()
@@ -39,7 +39,7 @@ void draw()
   
   fill(31, 31, 95);
   noStroke();
-  //rect(WIZARD_X, WIZARD_Y - 15, WIZARD_X + 190, WIZARD_Y + wizardUp.height);
+  rect(WIZARD_X, WIZARD_Y - 15, WIZARD_X + 190, WIZARD_Y + wizardUp.height);
   image(cloud, 0, 340);
   
   if (slope < 0)
