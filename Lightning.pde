@@ -9,7 +9,7 @@ int slope = 0;
 int length = 0;
 int thick = 0;
 int yCenter = 150;
-int x = WIZARD_X ;
+int x;
 int y1 = WIZARD_Y + 10;
 int y2 = WIZARD_Y + 10;
 
